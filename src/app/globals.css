@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rose: #c27189;
+  --color-rose-light: #d4909f;
+  --color-rose-dark: #a85a70;
+  --color-olive: #726331;
+  --color-olive-dark: #5a4e27;
+  --color-olive-light: #8a7d4f;
+  --color-gold: #ac9f6f;
+  --color-gold-light: #c4b98a;
+  --color-cream: #fffdf2;
+  --color-cream-dark: #f3eddb;
+  --color-ink: #1e1b12;
+  --color-ink-light: #2f2b1f;
+
+  --font-display: "Bebas Neue", "Impact", sans-serif;
+  --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    @apply bg-cream text-ink;
+    overflow-x: hidden;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-rose rounded-sm;
+  }
+
+  ::selection {
+    background-color: #cd859950;
+    color: #2a2618;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .container-section {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-16;
+  }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+  }
+  .focus\:not-sr-only:focus {
+    position: static; width: auto; height: auto; padding: inherit;
+    margin: inherit; overflow: visible; clip: auto; white-space: normal;
+  }
+}
