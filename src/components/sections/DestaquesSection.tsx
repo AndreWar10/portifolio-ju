@@ -10,6 +10,17 @@ export function DestaquesSection() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-[70%] -translate-x-1/2 bg-gradient-to-r from-transparent via-gold/40 to-transparent" aria-hidden="true" />
 
       <div className="container-section relative">
+        <FadeIn>
+          <p className="mb-16 flex items-center justify-center gap-3 rounded-2xl bg-white/70 px-6 py-5 text-center text-sm font-light text-ink/70 ring-1 ring-gold/15 sm:text-[15px]">
+            <span className="hidden h-px w-8 shrink-0 bg-rose sm:block" aria-hidden="true" />
+            <span>
+              Todos os trabalhos apresentados neste portfólio foram desenvolvidos entre{" "}
+              <strong className="font-semibold text-olive">2023 e 2026</strong>.
+            </span>
+            <span className="hidden h-px w-8 shrink-0 bg-rose sm:block" aria-hidden="true" />
+          </p>
+        </FadeIn>
+
         <SectionHeading headingId="destaques-heading"
           eyebrow="Seleção"
           title="Projetos em destaque"
